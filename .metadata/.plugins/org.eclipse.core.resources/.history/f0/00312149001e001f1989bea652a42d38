@@ -1,0 +1,19 @@
+package jimPractice;
+
+public class Persist {
+	public static int persistence(long n) {
+		//first deal with case of single digit number
+		if(n<10) {
+			return 0;
+		}
+		
+		//convert to Long object
+		Long l = Long.valueOf(n);
+		
+		
+		
+		
+		
+		return 0; // your code
+	}
+}

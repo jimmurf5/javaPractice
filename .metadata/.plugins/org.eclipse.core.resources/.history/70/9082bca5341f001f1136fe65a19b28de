@@ -1,0 +1,19 @@
+package jimPractice;
+
+public class JadenCase {
+	public String toJadenCase(String phrase) {
+		//split the string on each space
+		String[] splitPhrase = phrase.split(" ");
+		String newPhrase = "";
+		
+		for(String word: splitPhrase) {
+			String firstLetter = word.substring(0, 1).toUpperCase();
+			String restOfWord = word.substring(1, word.length()-1);
+			firstLetter.concat(restOfWord);
+			newPhrase.concat(firstLetter);
+		}
+		
+		return newPhrase;
+	}
+
+}
