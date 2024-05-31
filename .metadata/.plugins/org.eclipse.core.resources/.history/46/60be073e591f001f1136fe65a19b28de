@@ -1,0 +1,15 @@
+package jimPractice;
+
+public class MorseCodeDecoder {
+	public static String decode(String morseCode) {
+        String [] words = morseCode.split(" {3}");
+        
+        for(String word: words) {
+        	String [] letters = word.split(" ");
+        	for(String letter: letters) {
+        		
+        	}
+        }
+		return null;
+    }
+}

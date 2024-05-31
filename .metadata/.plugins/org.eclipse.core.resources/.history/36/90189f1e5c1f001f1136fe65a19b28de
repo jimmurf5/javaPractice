@@ -1,0 +1,39 @@
+package jimPractice;
+
+public class MorseCodeDecoder {
+	public static String decode(String morseCode) {
+		String[] words = morseCode.split(" {3}");
+		StringBuilder newPhrase = new StringBuilder();
+		for (String word : words) {
+			
+			String[] letters = word.split(" ");
+			for (String letter : letters) {
+				newPhrase.append(switcher(letter)); 
+			}
+			newPhrase.append(switcher(" "));
+		}
+		String finalPhrase = newPhrase.toString().trim();
+		return finalPhrase;
+	}
+
+	public static String switcher(String letter) {
+		String result = "";
+		switch(letter) {
+		case ".-": letter = "A";
+		break;
+		case "-..": letter = "D";
+		break;
+		case ".": letter = "E";
+		break;
+		case "....": letter = "H";
+		break;
+		case ".---": letter = "J";
+		break;
+		case "..-": letter = "U";
+		break;
+		}
+		return result;
+
+	}
+
+}
