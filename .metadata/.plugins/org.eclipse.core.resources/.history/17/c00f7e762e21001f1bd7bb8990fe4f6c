@@ -1,0 +1,33 @@
+package jimPractice;
+
+import java.util.ArrayList;
+
+public class DRoot {
+	
+	public static int digital_root(int n) {
+		ArrayList<Integer> numbList = new ArrayList<>();
+		int grandTotal = 0;
+		if(n<10) {
+			throw new IllegalArgumentException("n must be a positive integer greater than 9.");
+		}
+		while(n>9) {
+		int number = n%10;
+		System.out.println("last digit is: " +number);
+		numbList.add(number);
+		n = n/10;
+		System.out.println("n is: " + n);
+		}
+		for(Integer x: numbList) {
+			grandTotal += x;
+		}
+		
+		return grandTotal;
+	    
+	  }
+
+	public static void main(String[] args) {
+		System.out.println(digital_root(16)); 
+
+	}
+
+}

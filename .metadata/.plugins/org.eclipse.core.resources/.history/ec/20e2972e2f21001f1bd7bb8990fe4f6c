@@ -1,0 +1,40 @@
+package jimPractice;
+
+import java.util.ArrayList;
+
+public class DRoot {
+	
+	public static int digital_root(int n) {
+		ArrayList<Integer> numbList = new ArrayList<>();
+		int grandTotal = 0;
+		if(n<10) {
+			throw new IllegalArgumentException("n must be a positive integer greater than 9.");
+		}
+		while(n>9) {
+		int number = n%10;
+		System.out.println("last digit is: " +number);
+		numbList.add(number);
+		n = n/10;
+		System.out.println("n is: " + n);
+		}
+		numbList.add(n);// add the list remaining int
+		for(Integer x: numbList) {
+			grandTotal += x;
+		}
+		
+		if(grandTotal>9) {
+			grandTotal = 0;
+			System.out.println("it was larger than 9");
+			digital_root(grandTotal);//recursive call of method if result still double digits
+		}
+		
+		return grandTotal;
+	    
+	  }
+
+	public static void main(String[] args) {
+		System.out.println(digital_root(132189)); 
+
+	}
+
+}
